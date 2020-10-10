@@ -1,0 +1,34 @@
+body {
+    background-color: rgba(15, 15, 15, 0.795);
+}
+
+.h1 {
+    margin: 50px auto;
+}
+
+input {
+    background-color: transparent !important;
+    color: white !important;
+    border: 0 !important;
+    border-bottom: 2px solid gray !important;
+    border-radius: none !important;
+}
+
+input:focus {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid white !important;
+}
+
+.active {
+    border-bottom: 1px solid white;
+}
+
+.libg {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid gray;
+    color: white;
+    font-size: 20px;
+    ;
+}
