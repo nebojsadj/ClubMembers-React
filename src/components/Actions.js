@@ -2,15 +2,6 @@ import React from "react";
 import Member from "./Member";
 
 function Actions({ members, deleteMember }) {
-  let allMembers = members.map((member, index) => (
-    <Member
-      member={member}
-      key={index}
-      buttons={true}
-      deleteMember={deleteMember}
-    />
-  ));
-
   return (
     <div className="container">
       <div className="row">
@@ -30,7 +21,16 @@ function Actions({ members, deleteMember }) {
                     <th>Delete</th>
                   </tr>
                 </thead>
-                <tbody>{allMembers}</tbody>
+                <tbody>
+                  {members.map((member, index) => (
+                    <Member
+                      member={member}
+                      key={index}
+                      buttons={true}
+                      deleteMember={deleteMember}
+                    />
+                  ))}
+                </tbody>
               </table>
             </div>
           </div>
