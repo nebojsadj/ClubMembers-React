@@ -40,7 +40,6 @@ function App() {
   };
 
   const editMember = (member) => {
-    console.log(member);
     let current = members.map((el) => el.id).indexOf(member.id);
     members[current] = member;
     setMembers(members);
