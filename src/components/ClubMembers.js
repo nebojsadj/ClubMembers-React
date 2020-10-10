@@ -2,10 +2,6 @@ import React from "react";
 import Member from "./Member";
 
 function ClubMembers({ members }) {
-  let allMembers = members.map((member, index) => (
-    <Member member={member} key={index} />
-  ));
-
   return (
     <div className="container">
       <div className="row">
@@ -22,7 +18,11 @@ function ClubMembers({ members }) {
                     <th>Email</th>
                   </tr>
                 </thead>
-                <tbody>{allMembers}</tbody>
+                <tbody>
+                  {members.map((member, index) => (
+                    <Member member={member} key={index} />
+                  ))}
+                </tbody>
               </table>
             </div>
           </div>
