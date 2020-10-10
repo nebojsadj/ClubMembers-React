@@ -4,7 +4,7 @@ import ClubMembers from "./components/ClubMembers";
 import NewMember from "./components/NewMember";
 import Actions from "./components/Actions";
 import EditMember from "./components/EditMember";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import MoreInfo from "./components/MoreInfo";
 
 function App() {
@@ -52,28 +52,26 @@ function App() {
   };
 
   return (
-    <div>
-      <BrowserRouter>
-        <Navbar />
-        <Route path="/" exact>
-          <ClubMembers members={members} />
+    <React.Fragment>
+      <Navbar />
+      <Route path="/" exact>
+        <ClubMembers members={members} />
+      </Route>
+      <Route path="/new">
+        <NewMember addMember={addMember} />
+      </Route>
+      <Switch>
+        <Route path="/actions/info/:id">
+          <MoreInfo members={members} />
         </Route>
-        <Route path="/new">
-          <NewMember addMember={addMember} />
+        <Route path="/actions/:id">
+          <EditMember editMember={editMember} members={members} />
         </Route>
-        <Switch>
-          <Route path="/actions/info/:id">
-            <MoreInfo members={members} />
-          </Route>
-          <Route path="/actions/:id">
-            <EditMember editMember={editMember} members={members} />
-          </Route>
-          <Route path="/actions">
-            <Actions members={members} deleteMember={deleteMember} />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </div>
+        <Route path="/actions">
+          <Actions members={members} deleteMember={deleteMember} />
+        </Route>
+      </Switch>
+    </React.Fragment>
   );
 }
 
