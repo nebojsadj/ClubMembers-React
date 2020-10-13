@@ -4,7 +4,7 @@ import ClubMembers from "./components/ClubMembers";
 import NewMember from "./components/NewMember";
 import Actions from "./components/Actions";
 import EditMember from "./components/EditMember";
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import MoreInfo from "./components/MoreInfo";
 
 function App() {
@@ -17,17 +17,15 @@ function App() {
       <Route path="/new">
         <NewMember />
       </Route>
-      <Switch>
-        <Route path="/info">
-          <MoreInfo />
-        </Route>
-        <Route path="/edit">
-          <EditMember />
-        </Route>
-        <Route path="/actions">
-          <Actions />
-        </Route>
-      </Switch>
+      <Route path="/info">
+        <MoreInfo />
+      </Route>
+      <Route path="/edit">
+        <EditMember />
+      </Route>
+      <Route path="/actions">
+        <Actions />
+      </Route>
     </Fragment>
   );
 }
