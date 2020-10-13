@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 function MoreInfo() {
   const info = useSelector((state) => state.info);
-  console.log(info);
 
   return (
     <div className="container">

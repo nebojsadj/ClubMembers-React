@@ -19,7 +19,6 @@ function EditMember() {
   const edit = useSelector((state) => state.edit);
   const history = useHistory();
   const dispatch = useDispatch();
-  console.log(edit);
 
   useEffect(() => {
     if (edit) {
@@ -29,7 +28,7 @@ function EditMember() {
 
   const updateMember = (e) => {
     e.preventDefault();
-    dispatch(update_member_action(edit && edit.id, state));
+    dispatch(update_member_action(edit.id, state));
     history.push("/");
   };
 
