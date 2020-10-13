@@ -1,7 +1,10 @@
 import React from "react";
 import Member from "./Member";
+import { useSelector } from "react-redux";
 
-function Actions({ members, deleteMember }) {
+function Actions() {
+  const members = useSelector((state) => state.members);
+
   return (
     <div className="container">
       <div className="row">
@@ -23,12 +26,7 @@ function Actions({ members, deleteMember }) {
                 </thead>
                 <tbody>
                   {members.map((member, index) => (
-                    <Member
-                      member={member}
-                      key={index}
-                      buttons={true}
-                      deleteMember={deleteMember}
-                    />
+                    <Member member={member} key={index} buttons={true} />
                   ))}
                 </tbody>
               </table>

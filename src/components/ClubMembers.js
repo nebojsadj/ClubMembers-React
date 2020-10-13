@@ -1,7 +1,10 @@
 import React from "react";
 import Member from "./Member";
+import { useSelector } from "react-redux";
 
-function ClubMembers({ members }) {
+function ClubMembers() {
+  const members = useSelector((state) => state.members);
+  console.log(members);
   return (
     <div className="container">
       <div className="row">

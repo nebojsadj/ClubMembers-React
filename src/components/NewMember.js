@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { new_member_action } from "./redux/actions";
 
-function NewMember({ addMember }) {
+function NewMember() {
   const [member, setMember] = useState({});
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const saveMember = () => {
-    addMember(member);
+    dispatch(new_member_action(member));
     history.push("/");
   };
 
@@ -105,7 +108,7 @@ function NewMember({ addMember }) {
                 onClick={saveMember}
                 className="btn btn-secondary form-control"
               >
-                Submit
+                Save
               </button>
             </div>
           </div>

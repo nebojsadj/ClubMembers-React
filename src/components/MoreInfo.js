@@ -1,27 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { withRouter } from "react-router-dom";
+import React from "react";
+import { useSelector } from "react-redux";
 
-function MoreInfo(props) {
-  const [state, setState] = useState({
-    id: "",
-    name: "",
-    lastName: "",
-    userName: "",
-    idNumber: "",
-    phone: "",
-    email: "",
-    address: "",
-    age: "",
-    memberSince: "",
-  });
-
-  let currentMember = props.members.filter(
-    (el) => el.id === props.match.params.id
-  )[0];
-
-  useEffect(() => {
-    setState(currentMember);
-  }, [currentMember]);
+function MoreInfo() {
+  const info = useSelector((state) => state.info);
+  console.log(info);
 
   return (
     <div className="container">
@@ -32,16 +14,36 @@ function MoreInfo(props) {
             <div className="col-8 offset-2">
               <div className="container">
                 <ul className="list-group">
-                  <li className="list-group-item libg">{`Id : ${state.id}`}</li>
-                  <li className="list-group-item libg">{`Name : ${state.name}`}</li>
-                  <li className="list-group-item libg">{`Last name : ${state.lastName}`}</li>
-                  <li className="list-group-item libg">{`User name : ${state.userName}`}</li>
-                  <li className="list-group-item libg">{`ID number : ${state.idNumber}`}</li>
-                  <li className="list-group-item libg">{`Phone : ${state.phone}`}</li>
-                  <li className="list-group-item libg">{`Email : ${state.email}`}</li>
-                  <li className="list-group-item libg">{`Address : ${state.address}`}</li>
-                  <li className="list-group-item libg">{`Age : ${state.age}`}</li>
-                  <li className="list-group-item libg">{`Member since : ${state.memberSince}`}</li>
+                  <li className="list-group-item libg">{`Id : ${
+                    info && info.id
+                  }`}</li>
+                  <li className="list-group-item libg">{`Name : ${
+                    info && info.name
+                  }`}</li>
+                  <li className="list-group-item libg">{`Last name : ${
+                    info && info.lastName
+                  }`}</li>
+                  <li className="list-group-item libg">{`User name : ${
+                    info && info.userName
+                  }`}</li>
+                  <li className="list-group-item libg">{`ID number : ${
+                    info && info.idNumber
+                  }`}</li>
+                  <li className="list-group-item libg">{`Phone : ${
+                    info && info.phone
+                  }`}</li>
+                  <li className="list-group-item libg">{`Email : ${
+                    info && info.email
+                  }`}</li>
+                  <li className="list-group-item libg">{`Address : ${
+                    info && info.address
+                  }`}</li>
+                  <li className="list-group-item libg">{`Age : ${
+                    info && info.age
+                  }`}</li>
+                  <li className="list-group-item libg">{`Member since : ${
+                    info && info.memberSince
+                  }`}</li>
                 </ul>
               </div>
             </div>
@@ -52,4 +54,4 @@ function MoreInfo(props) {
   );
 }
 
-export default withRouter(MoreInfo);
+export default MoreInfo;

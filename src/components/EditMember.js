@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { withRouter } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { update_member_action } from "./redux/actions";
 
-function EditMember(props) {
+function EditMember() {
   const [state, setState] = useState({
     id: "",
     name: "",
@@ -15,19 +16,20 @@ function EditMember(props) {
     age: "",
     memberSince: "",
   });
+  const edit = useSelector((state) => state.edit);
   const history = useHistory();
-
-  let currentMember = props.members.filter(
-    (el) => el.id === props.match.params.id
-  )[0];
+  const dispatch = useDispatch();
+  console.log(edit);
 
   useEffect(() => {
-    setState(currentMember);
-  }, [currentMember]);
+    if (edit) {
+      setState(edit);
+    }
+  }, [edit]);
 
   const updateMember = (e) => {
     e.preventDefault();
-    props.editMember(state);
+    dispatch(update_member_action(edit && edit.id, state));
     history.push("/");
   };
 
@@ -132,4 +134,4 @@ function EditMember(props) {
   );
 }
 
-export default withRouter(EditMember);
+export default EditMember;
