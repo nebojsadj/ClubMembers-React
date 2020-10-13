@@ -45,7 +45,7 @@ function EditMember() {
                   onChange={(e) => setState({ ...state, name: e.target.value })}
                   type="text"
                   className="form-control"
-                  value={state.name}
+                  value={state.name || "* fill in"}
                 />
                 <br />
 
@@ -55,7 +55,7 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.lastName}
+                  value={state.lastName || "* fill in"}
                 />
                 <br />
                 <input
@@ -64,7 +64,7 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.userName}
+                  value={state.userName || "* fill in"}
                 />
                 <br />
                 <input
@@ -73,7 +73,7 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.idNumber}
+                  value={state.idNumber || "* fill in"}
                 />
                 <br />
                 <input
@@ -82,7 +82,7 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.phone}
+                  value={state.phone || "* fill in"}
                 />
                 <br />
                 <input
@@ -91,7 +91,7 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.email}
+                  value={state.email || "* fill in"}
                 />
                 <br />
                 <input
@@ -100,14 +100,14 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.address}
+                  value={state.address || "* fill in"}
                 />
                 <br />
                 <input
                   onChange={(e) => setState({ ...state, age: e.target.value })}
                   type="text"
                   className="form-control"
-                  value={state.age}
+                  value={state.age || "* fill in"}
                 />
                 <br />
                 <input
@@ -116,7 +116,7 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.memberSince}
+                  value={state.memberSince || "* fill in"}
                 />
                 <br />
                 <button
