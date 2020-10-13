@@ -13,38 +13,20 @@ function MoreInfo() {
           <div className="row mt-4">
             <div className="col-8 offset-2">
               <div className="container">
-                <ul className="list-group">
-                  <li className="list-group-item libg">{`Id : ${
-                    info && info.id
-                  }`}</li>
-                  <li className="list-group-item libg">{`Name : ${
-                    info && info.name
-                  }`}</li>
-                  <li className="list-group-item libg">{`Last name : ${
-                    info && info.lastName
-                  }`}</li>
-                  <li className="list-group-item libg">{`User name : ${
-                    info && info.userName
-                  }`}</li>
-                  <li className="list-group-item libg">{`ID number : ${
-                    info && info.idNumber
-                  }`}</li>
-                  <li className="list-group-item libg">{`Phone : ${
-                    info && info.phone
-                  }`}</li>
-                  <li className="list-group-item libg">{`Email : ${
-                    info && info.email
-                  }`}</li>
-                  <li className="list-group-item libg">{`Address : ${
-                    info && info.address
-                  }`}</li>
-                  <li className="list-group-item libg">{`Age : ${
-                    info && info.age
-                  }`}</li>
-                  <li className="list-group-item libg">{`Member since : ${
-                    info && info.memberSince
-                  }`}</li>
-                </ul>
+                {info && (
+                  <ul className="list-group">
+                    <li className="list-group-item libg">{`Id : ${info.id}`}</li>
+                    <li className="list-group-item libg">{`Name : ${info.name}`}</li>
+                    <li className="list-group-item libg">{`Last name : ${info.lastName}`}</li>
+                    <li className="list-group-item libg">{`User name : ${info.userName}`}</li>
+                    <li className="list-group-item libg">{`ID number : ${info.idNumber}`}</li>
+                    <li className="list-group-item libg">{`Phone : ${info.phone}`}</li>
+                    <li className="list-group-item libg">{`Email : ${info.email}`}</li>
+                    <li className="list-group-item libg">{`Address : ${info.address}`}</li>
+                    <li className="list-group-item libg">{`Age : ${info.age}`}</li>
+                    <li className="list-group-item libg">{`Member since : ${info.memberSince}`}</li>
+                  </ul>
+                )}
               </div>
             </div>
           </div>
