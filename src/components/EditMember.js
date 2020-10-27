@@ -26,12 +26,6 @@ function EditMember() {
     }
   }, [edit]);
 
-  const updateMember = (e) => {
-    e.preventDefault();
-    dispatch(update_member_action(edit.id, state));
-    history.push("/");
-  };
-
   return (
     <div className="container">
       <div className="row">
@@ -44,7 +38,7 @@ function EditMember() {
                   onChange={(e) => setState({ ...state, name: e.target.value })}
                   type="text"
                   className="form-control"
-                  value={state.name || "* fill in"}
+                  value={state.name || " * fill in"}
                 />
                 <br />
 
@@ -54,7 +48,7 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.lastName || "* fill in"}
+                  value={state.lastName || " * fill in"}
                 />
                 <br />
                 <input
@@ -63,7 +57,7 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.userName || "* fill in"}
+                  value={state.userName || " * fill in"}
                 />
                 <br />
                 <input
@@ -72,7 +66,7 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.idNumber || "* fill in"}
+                  value={state.idNumber || " * fill in"}
                 />
                 <br />
                 <input
@@ -81,7 +75,7 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.phone || "* fill in"}
+                  value={state.phone || " * fill in"}
                 />
                 <br />
                 <input
@@ -90,7 +84,7 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.email || "* fill in"}
+                  value={state.email || " * fill in"}
                 />
                 <br />
                 <input
@@ -99,14 +93,14 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.address || "* fill in"}
+                  value={state.address || " * fill in"}
                 />
                 <br />
                 <input
                   onChange={(e) => setState({ ...state, age: e.target.value })}
                   type="text"
                   className="form-control"
-                  value={state.age || "* fill in"}
+                  value={state.age || " * fill in"}
                 />
                 <br />
                 <input
@@ -115,11 +109,16 @@ function EditMember() {
                   }
                   type="text"
                   className="form-control"
-                  value={state.memberSince || "* fill in"}
+                  value={state.memberSince || " * fill in"}
                 />
                 <br />
                 <button
-                  onClick={updateMember}
+                  to="/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(update_member_action(edit.id, state));
+                    history.push("/");
+                  }}
                   className="btn btn-secondary form-control"
                 >
                   Update
