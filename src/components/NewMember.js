@@ -1,17 +1,11 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { new_member_action } from "./redux/actions";
 
 function NewMember() {
   const [member, setMember] = useState({});
-  const history = useHistory();
   const dispatch = useDispatch();
-
-  const saveMember = () => {
-    dispatch(new_member_action(member));
-    history.push("/");
-  };
 
   return (
     <div className="container">
@@ -104,12 +98,13 @@ function NewMember() {
                 className="form-control"
               />
               <br />
-              <button
-                onClick={saveMember}
+              <Link
+                to="/"
+                onClick={() => dispatch(new_member_action(member))}
                 className="btn btn-secondary form-control"
               >
                 Save
-              </button>
+              </Link>
             </div>
           </div>
         </div>
