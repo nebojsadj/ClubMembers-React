@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { new_member_action } from "./redux/actions";
+import { new_member_action } from "../redux/actions";
 
 function NewMember() {
   const [member, setMember] = useState({});

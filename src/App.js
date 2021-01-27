@@ -6,17 +6,8 @@ import Actions from "./components/Actions";
 import EditMember from "./components/EditMember";
 import { Route } from "react-router-dom";
 import MoreInfo from "./components/MoreInfo";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { load_member_action } from "./components/redux/actions";
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(load_member_action());
-  }, []);
-
   return (
     <Fragment>
       <Navbar />

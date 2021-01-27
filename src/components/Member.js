@@ -5,7 +5,7 @@ import {
   delete_member_action,
   edit_member_action,
   info_member_action,
-} from "./redux/actions";
+} from "../redux/actions";
 
 function Member({ member, buttons }) {
   const { id, name, userName, email } = member;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { update_member_action } from "./redux/actions";
+import { update_member_action } from "../redux/actions";
 
 function EditMember() {
   const [state, setState] = useState({

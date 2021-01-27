@@ -1,11 +1,5 @@
 import * as types from "./types";
 
-export const load_member_action = () => {
-  return {
-    type: types.load_members,
-  };
-};
-
 export const new_member_action = (newMember) => {
   return {
     type: types.new_member,

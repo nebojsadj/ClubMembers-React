@@ -3,8 +3,6 @@ import * as types from "./types";
 
 function reducer(state = initState, action) {
   switch (action.type) {
-    case types.load_members:
-      return state;
     case types.new_member:
       return {
         ...state,
