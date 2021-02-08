@@ -1,37 +1,34 @@
 import React from "react";
 import Member from "./Member";
 import { useSelector } from "react-redux";
+import { Col, Container, Row } from "react-bootstrap";
 
 function ClubMembers() {
   const members = useSelector((state) => state.members);
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-10 offset-1">
+    <Container>
+      <Row>
+        <Col md={{ span: 8, offset: 2 }} xs={{ span: 12 }} className="mt-3">
           <h1 className="text-center text-light h1">Club Members</h1>
-          <div className="row mt-4">
-            <div className="col-8 offset-2">
-              <table className="table">
-                <thead>
-                  <tr className="text-light">
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>UserName</th>
-                    <th>Email</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {members.map((member, index) => (
-                    <Member member={member} key={index} />
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          <table className="table mt-4">
+            <thead>
+              <tr className="text-light">
+                <th className="tab">#</th>
+                <th className="tab">Name</th>
+                <th className="tab">UserName</th>
+                <th className="tab">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              {members.map((member, index) => (
+                <Member member={member} key={index} />
+              ))}
+            </tbody>
+          </table>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

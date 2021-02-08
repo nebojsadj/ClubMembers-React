@@ -1,11 +1,6 @@
 body {
-  background-color: rgba(15, 15, 15, 0.795);
+  background-color: #262626;
 }
-
-.h1 {
-  margin: 50px auto;
-}
-
 input {
   background-color: transparent !important;
   color: white !important;
@@ -23,11 +18,63 @@ input:focus {
 .active {
   border-bottom: 1px solid white;
 }
-
+.nav:hover {
+  text-decoration: none;
+}
 .libg {
   background-color: transparent;
   border: none;
   border-bottom: 2px solid gray;
   color: white;
   font-size: 20px;
+}
+
+@media all and (max-widtx: 768px) {
+}
+
+@media all and (max-width: 425px) {
+  a.navbar-brand {
+    font-size: 16px;
+  }
+  .tab {
+    font-size: 12px !important;
+  }
+  .h1 {
+    font-size: 22px;
+  }
+  .actHolder {
+    margin: 0 auto !important;
+    padding: 0px;
+  }
+}
+@media all and (max-width: 375px) {
+  a.navbar-brand {
+    font-size: 14px;
+  }
+  .tab {
+    font-size: 10px !important;
+  }
+  .h1 {
+    font-size: 18px;
+  }
+  .nav {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 320px) {
+  a.navbar-brand {
+    font-size: 12px;
+  }
+  .tab {
+    font-size: 8px !important;
+  }
+  .h1 {
+    font-size: 16px;
+  }
+  .nav {
+    font-size: 12px;
+  }
+  .navbar-brand {
+    font-size: 16px;
+  }
 }

@@ -14,10 +14,11 @@ function Member({ member, buttons }) {
 
   return (
     <tr className="text-light">
-      <td>{id}</td>
-      <td>{name}</td>
-      <td>{userName}</td>
-      <td>{email}</td>
+      <td className="tab">{id}</td>
+      <td className="tab">{name}</td>
+      <td className="tab">{userName}</td>
+      <td className="tab">{email}</td>
+
       {buttons && (
         <>
           <td>
@@ -26,7 +27,7 @@ function Member({ member, buttons }) {
                 dispatch(info_member_action(id));
                 history.push("/info");
               }}
-              className="btn btn-sm btn-outline-info"
+              className="btn btn-sm btn-outline-info tab"
             >
               More
             </button>
@@ -37,7 +38,7 @@ function Member({ member, buttons }) {
                 dispatch(edit_member_action(id));
                 history.push("/edit");
               }}
-              className="btn btn-sm btn-outline-warning"
+              className="btn btn-sm btn-outline-warning tab"
             >
               Edit
             </button>
@@ -45,7 +46,7 @@ function Member({ member, buttons }) {
           <td>
             <button
               onClick={() => dispatch(delete_member_action(id))}
-              className="btn btn-sm btn-outline-danger"
+              className="btn btn-sm btn-outline-danger tab"
             >
               Delete
             </button>

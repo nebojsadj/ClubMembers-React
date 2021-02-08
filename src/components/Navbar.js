@@ -1,33 +1,32 @@
 import React from "react";
+import { Container, Row, Col, Navbar, Nav } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
-function Navbar() {
+function Header() {
   return (
-    <div className="container-fluid">
-      <nav className="navbar navbar-expand-lg navbar-light">
-        <Link to="/" className="navbar-brand text-light">
-          CRUD-React
-        </Link>
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <NavLink to="/" exact className="nav-link text-light">
-              Members
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink to="/new" className="nav-link text-light">
-              NewMember
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink to="/actions" className="nav-link text-light">
-              Actions
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <Container fluid bg="dark">
+      <Row>
+        <Col xs={{ span: 12 }} className="holderNav">
+          <Navbar>
+            <Link to="/" className="text-light navbar-brand">
+              CRUD-app
+            </Link>
+            <Nav className="ml-auto">
+              <NavLink to="/" exact className="text-light ml-2 nav">
+                Members
+              </NavLink>
+              <NavLink to="/new" className="text-light ml-2 nav">
+                NewMember
+              </NavLink>
+              <NavLink to="/actions" className="text-light ml-2 nav">
+                Actions
+              </NavLink>
+            </Nav>
+          </Navbar>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
-export default Navbar;
+export default Header;
